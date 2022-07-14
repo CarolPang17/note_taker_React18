@@ -27,8 +27,12 @@ const Logs = () => {
       }
     ]
   return <div className="logs">
-    <LogItem date={logsData[0].date} desc={logsData[0].desc} time={logsData[0].time}/> 
-    <LogItem date={new Date(2022,5,22,5,30)} desc={"Haha"} time={"60"}/> 
+    {
+      //<LogItem date={logsData[0].date} desc={logsData[0].desc} time={logsData[0].time}/>
+      //logsData.map(item => <LogItem date={item.date} desc={item.desc} time={item.time}/>)
+      
+      logsData.map(item => <LogItem {...item}/>)
+    }
 
   </div>
 }
