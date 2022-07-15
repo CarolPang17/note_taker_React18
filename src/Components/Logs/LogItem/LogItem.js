@@ -4,7 +4,6 @@ import Card from '../../UI/Card/Card';
 import './LogItem.css'
 
 const LogItem = (props) => {
-  console.log(props.date)
 
   return (    
   <Card className='item'>

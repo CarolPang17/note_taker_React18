@@ -3,22 +3,35 @@ import Card from '../UI/Card/Card';
 import './LogsForm.css';
 
 const LogsForm = () => {
+  
+  const dateChangeHandler = (e) => {
+    console.log(e.target.value);
+  };
+
+  const descChangeHandler = (e) => {
+    console.log(e.target.value);
+  };
+
+  const timeChangeHandler = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <Card className="logs-form">
-      <form >
-        <div className='form-item'>
+      <form>
+        <div className="form-item">
           <label htmlFor="date">Date?</label>
-              <input id="date" type="date"/>    
+          <input onChange={dateChangeHandler} id="date" type="date" />
         </div>
-        <div className='form-item'>
+        <div className="form-item">
           <label htmlFor="desc">What you going to do?</label>
-              <input id="desc" type="text"/>    
+          <input onChange={descChangeHandler} id="desc" type="text" />
         </div>
-        <div className='form-item'>
+        <div className="form-item">
           <label htmlFor="time">How long does it takes?</label>
-              <input id="time" type="number"/>    
+          <input onChange={timeChangeHandler} id="time" type="number" />
         </div>
-        <div className='form-btn'>
+        <div className="form-btn">
           <button> ADD </button>
         </div>
       </form>
