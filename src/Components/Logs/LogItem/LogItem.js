@@ -13,6 +13,10 @@ const LogItem = (props) => {
         <h2 className="desc"> {props.desc} </h2>
         <div className="time"> {props.time}</div>
       </div>
+
+      <div>
+        <div className='delete'>x</div>
+      </div>
     </Card>)
 
 };

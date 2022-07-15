@@ -10,7 +10,6 @@
   flex: auto;
   text-align: center;
   font-weight: bold;
-  background-color: #bfa;
 }
 
 .desc{
@@ -21,3 +20,18 @@ color: #194b49;
 .time{
   color: #d62828;
 }
+
+.delete{
+  margin-right: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .4s;
+}
+
+  .delete:hover{
+    color: #D62828;
+    transform: rotate(1turn);
+
+  }
