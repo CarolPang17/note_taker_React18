@@ -35,7 +35,9 @@ const App = () => {
   ];
 
   const saveLogJandler = (newLog) => {
-    console.log(newLog);
+    newLog.id = Date.now() + '';
+
+    logsData.push(newLog);
   }
 
   return (
