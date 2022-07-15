@@ -3,22 +3,39 @@ import Card from '../UI/Card/Card';
 import './LogsForm.css';
 
 const LogsForm = () => {
-  
+
+  let inputDate = '';
+  let inputDesc = '';
+  let inputTime = 0;
+
   const dateChangeHandler = (e) => {
-    console.log(e.target.value);
+    inputDate = e.target.value
   };
 
   const descChangeHandler = (e) => {
-    console.log(e.target.value);
+    inputDesc = e.target.value
   };
 
   const timeChangeHandler = (e) => {
-    console.log(e.target.value);
+    inputTime = e.target.value
   };
+
+
+  const formSubitHandler = (e) => {
+    e.preventDefault();
+
+    const newLog = {
+      date : new Date(inputDate),
+      desc : inputDesc,
+      time : inputTime
+    }
+
+    console.log(newLog);
+  }
 
   return (
     <Card className="logs-form">
-      <form>
+      <form onSubmit={formSubitHandler}>
         <div className="form-item">
           <label htmlFor="date">Date?</label>
           <input onChange={dateChangeHandler} id="date" type="date" />
