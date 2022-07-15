@@ -58,7 +58,6 @@ const LogsForm = () => {
 
     console.log(newLog);
 
-
     setInputDate('');
     setinputDesc('');
     setInputTime('');
