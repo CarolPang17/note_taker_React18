@@ -4,39 +4,39 @@ import './LogsForm.css';
 
 const LogsForm = () => {
 
-  // const [inputDate, setInputDate] = useState('');
-  // const [inputDesc, setinputDesc] = useState('');
-  // const [inputTime, setInputTime] = useState('');
+  const [inputDate, setInputDate] = useState('');
+  const [inputDesc, setinputDesc] = useState('');
+  const [inputTime, setInputTime] = useState('');
 
-  const [formData, setFormData] = useState({
-    inputDate: '',
-    inputDesc: '',
-    inputTime: ''
-  })
+  // const [formData, setFormData] = useState({
+  //   inputDate: '',
+  //   inputDesc: '',
+  //   inputTime: ''
+  // })
   
   const dateChangeHandler = (e) => {
-    // setInputDate(e.target.value);
-    setFormData({
-          ...formData,
-          inputDate: e.target.value
-    })
+    setInputDate(e.target.value);
+    // setFormData({
+    //       ...formData,
+    //       inputDate: e.target.value
+    // })
 
   };
 
   const descChangeHandler = (e) => {
-    // setinputDesc(e.target.value);
-    setFormData({
-      ...formData,
-      inputDesc: e.target.value
-    })
+    setinputDesc(e.target.value);
+    // setFormData({
+    //   ...formData,
+    //   inputDesc: e.target.value
+    // })
   };
 
   const timeChangeHandler = (e) => {
-    // setInputTime(e.target.value);
-    setFormData({
-      ...formData,
-      inputTime: e.target.value
-    })
+    setInputTime(e.target.value);
+    // setFormData({
+    //   ...formData,
+    //   inputTime: e.target.value
+    // })
   };
 
 
@@ -44,24 +44,30 @@ const LogsForm = () => {
 
     e.preventDefault();
 
+    // const newLog = {
+    //   date : new Date(formData.inputDate),
+    //   desc : formData.inputDesc,
+    //   time : +formData.inputTime
+    // }
+
     const newLog = {
-      date : new Date(formData.inputDate),
-      desc : formData.inputDesc,
-      time : +formData.inputTime
+      date : new Date(inputDate),
+      desc : inputDesc,
+      time : +inputTime
     }
 
     console.log(newLog);
 
 
-    // setInputDate('');
-    // setinputDesc('');
-    // setInputTime('');
+    setInputDate('');
+    setinputDesc('');
+    setInputTime('');
 
-    setFormData({
-      inputDate: '',
-      inputDesc: '',
-      inputTime: ''
-    })
+    // setFormData({
+    //   inputDate: '',
+    //   inputDesc: '',
+    //   inputTime: ''
+    // })
 
   }
 
@@ -70,15 +76,15 @@ const LogsForm = () => {
       <form onSubmit={formSubitHandler}>
         <div className="form-item">
           <label htmlFor="date">Date?</label>
-          <input onChange={dateChangeHandler} value={formData.inputDate} id="date" type="date" />
+          <input onChange={dateChangeHandler} value={inputDate} id="date" type="date" />
         </div>
         <div className="form-item">
           <label htmlFor="desc">What you going to do?</label>
-          <input onChange={descChangeHandler} value={formData.inputDesc} id="desc" type="text" />
+          <input onChange={descChangeHandler} value={inputDesc} id="desc" type="text" />
         </div>
         <div className="form-item">
           <label htmlFor="time">How long does it takes?</label>
-          <input onChange={timeChangeHandler} value={formData.inputTime} id="time" type="number" />
+          <input onChange={timeChangeHandler} value={inputTime} id="time" type="number" />
         </div>
         <div className="form-btn">
           <button> ADD </button>
