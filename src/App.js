@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 import Logs from './Components/Logs/logs';
 import LogsForm from './Components/LogsForm/LogsForm';
 import './App.css'
@@ -7,7 +7,7 @@ import './App.css'
 
 const App = () => {
 
-  const logsData = [
+  const [logsData, setLogsData] = useState([
     {
       id: '001',
       date: new Date(2021, 9, 21, 19, 0),
@@ -32,12 +32,14 @@ const App = () => {
       desc: 'try new clothes',
       time: 95,
     },
-  ];
+  ]
+  )
 
   const saveLogJandler = (newLog) => {
     newLog.id = Date.now() + '';
 
-    logsData.push(newLog);
+    // logsData.push(newLog);
+    setLogsData([...logsData, newLog])
   }
 
   return (
