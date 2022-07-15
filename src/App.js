@@ -34,10 +34,13 @@ const App = () => {
     },
   ];
 
+  const saveLogJandler = (newLog) => {
+    console.log(newLog);
+  }
 
   return (
     <div className='app'>
-      <LogsForm />
+      <LogsForm onSaveLog={saveLogJandler} />
       <Logs logsData={logsData} />
     </div>
   );

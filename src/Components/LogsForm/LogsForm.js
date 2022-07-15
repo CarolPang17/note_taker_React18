@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Card from '../UI/Card/Card';
 import './LogsForm.css';
 
-const LogsForm = () => {
+const LogsForm = (props) => {
+
 
   const [inputDate, setInputDate] = useState('');
   const [inputDesc, setinputDesc] = useState('');
@@ -56,7 +57,7 @@ const LogsForm = () => {
       time : +inputTime
     }
 
-    console.log(newLog);
+    props.onSaveLog(newLog);
 
     setInputDate('');
     setinputDesc('');
