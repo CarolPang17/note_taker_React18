@@ -7,7 +7,11 @@ const LogItem = (props) => {
 
 
   const deleteHandler = () => {
-    window.confirm('are you sure you want to delete?')
+    const isDel = window.confirm('are you sure you want to delete?')
+    if(isDel) {
+      props.onDelLog(props.index)
+    }
+
   }
 
   return (    

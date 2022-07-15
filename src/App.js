@@ -42,10 +42,14 @@ const App = () => {
     setLogsData([...logsData, newLog])
   }
 
+  const deleteLogByIndex = (index) => {
+    setLogsData(prevState => [...prevState].slice(index,1));
+  }
+
   return (
     <div className='app'>
       <LogsForm onSaveLog={saveLogJandler} />
-      <Logs logsData={logsData} />
+      <Logs logsData={logsData} onDelLog={deleteLogByIndex}/>
     </div>
   );
 };
