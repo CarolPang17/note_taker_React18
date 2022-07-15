@@ -5,6 +5,11 @@ import './LogItem.css'
 
 const LogItem = (props) => {
 
+
+  const deleteHandler = () => {
+    window.confirm('are you sure you want to delete?')
+  }
+
   return (    
   <Card className='item'>
    <MyDate date={props.date}/>
@@ -15,7 +20,7 @@ const LogItem = (props) => {
       </div>
 
       <div>
-        <div className='delete'>x</div>
+        <div onClick={deleteHandler} className='delete'>x</div>
       </div>
     </Card>)
 
