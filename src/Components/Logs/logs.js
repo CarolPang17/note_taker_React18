@@ -18,10 +18,7 @@ const Logs = (props) => {
 
   return <Card className="logs">
       {
-        //<LogItem date={logsData[0].date} desc={logsData[0].desc} time={logsData[0].time}/>
-        //<LogItem key={item.id} date={item.date} desc={item.desc} time={item.time} />
-        logItemData
-        // logsData.map(item => <LogItem {...item}/>)
+        logItemData.length !== 0 ? logItemData : <p className='no-logs'> There are no logs Data</p>
       }
     </Card>
 
