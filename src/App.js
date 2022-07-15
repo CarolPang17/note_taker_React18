@@ -43,7 +43,12 @@ const App = () => {
   }
 
   const deleteLogByIndex = (index) => {
-    setLogsData(prevState => [...prevState].slice(index,1));
+    setLogsData(prevState => {
+      const newLogsList = [...prevState];
+      newLogsList.splice(index, 1);
+      return newLogsList
+    }
+    )
   }
 
   return (
